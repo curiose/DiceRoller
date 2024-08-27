@@ -17,6 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.diceroller.ui.theme.DiceRollerTheme
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +41,11 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         modifier = Modifier, // Аргумент модификатора гарантирует, что составные элементы в функции Column() соответствуют ограничениям, вызванным для экземпляра модификатора.
         horizontalAlignment = Alignment.CenterHorizontally, // Это гарантирует, что дочерние элементы внутри столбца будут центрированы на экране устройства по ширине.
     ) {
+        Image(
+            painter = painterResource(R.drawable.dice_1),
+            contentDescription = "1",
+        )
+        Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { /*TODO*/ }) {
             Text(stringResource(R.string.roll))
         }
